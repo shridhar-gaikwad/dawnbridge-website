@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" width="480" height="260">
+  <!-- In-Country Representation: globe, pin, representatives, university (original artwork) -->
+  <defs>
+    <linearGradient id="r-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1F6E98"/>
+      <stop offset="1" stop-color="#134B69"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="260" fill="url(#r-bg)"/>
+  <g fill="none" stroke="#F2F5F7" stroke-opacity=".06"><path d="M0 52h480M0 104h480M0 156h480M0 208h480M96 0v260M192 0v260M288 0v260M384 0v260"/></g>
+
+  <!-- Globe -->
+  <g fill="none" stroke="#F2F5F7" stroke-opacity=".55" stroke-width="2">
+    <circle cx="150" cy="134" r="84"/>
+    <ellipse cx="150" cy="134" rx="84" ry="30"/>
+    <ellipse cx="150" cy="134" rx="84" ry="60"/>
+    <ellipse cx="150" cy="134" rx="30" ry="84"/>
+    <ellipse cx="150" cy="134" rx="60" ry="84"/>
+  </g>
+  <!-- Map pin -->
+  <path d="M168 76c-17 0-30 13-30 30 0 22 30 50 30 50s30-28 30-50c0-17-13-30-30-30z" fill="#F2F5F7"/>
+  <circle cx="168" cy="106" r="11" fill="#16587B"/>
+
+  <!-- Route to university -->
+  <path d="M196 120Q270 60 352 96" fill="none" stroke="#7CC6EE" stroke-width="2.5" stroke-dasharray="4 8" stroke-linecap="round"/>
+
+  <!-- University building -->
+  <g fill="none" stroke="#F2F5F7" stroke-opacity=".9" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M330 110l60-30 60 30z"/>
+    <path d="M336 116h108M340 196h100M332 206h116"/>
+    <path d="M350 122v68M372 122v68M408 122v68M430 122v68"/>
+    <path d="M384 196v-30h12v30"/>
+  </g>
+
+  <!-- Representatives -->
+  <g fill="#F2F5F7">
+    <circle cx="262" cy="182" r="11"/>
+    <path d="M242 222c0-14 9-24 20-24s20 10 20 24z"/>
+    <circle cx="300" cy="176" r="13" fill="#7CC6EE"/>
+    <path d="M276 222c0-16 11-28 24-28s24 12 24 28z" fill="#7CC6EE"/>
+  </g>
+</svg>

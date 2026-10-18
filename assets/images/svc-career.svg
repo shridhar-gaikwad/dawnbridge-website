@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" width="480" height="260">
+  <!-- Career Guidance Department: Grade 6-12 staircase to graduation (original artwork) -->
+  <defs>
+    <linearGradient id="c-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#134B69"/>
+      <stop offset="1" stop-color="#0B2A3B"/>
+    </linearGradient>
+    <linearGradient id="c-step" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7CC6EE" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#7CC6EE" stop-opacity=".06"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="260" fill="url(#c-bg)"/>
+  <g fill="none" stroke="#F2F5F7" stroke-opacity=".06"><path d="M0 52h480M0 104h480M0 156h480M0 208h480M96 0v260M192 0v260M288 0v260M384 0v260"/></g>
+
+  <!-- Seven steps: Grades 6 to 12 -->
+  <g fill="url(#c-step)" stroke="#DCEAF2" stroke-opacity=".7" stroke-width="1.5">
+    <rect x="40"  y="200" width="52" height="40"/>
+    <rect x="92"  y="180" width="52" height="60"/>
+    <rect x="144" y="160" width="52" height="80"/>
+    <rect x="196" y="140" width="52" height="100"/>
+    <rect x="248" y="120" width="52" height="120"/>
+    <rect x="300" y="100" width="52" height="140"/>
+    <rect x="352" y="80"  width="52" height="160"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#F2F5F7" text-anchor="middle">
+    <text x="66" y="225">6</text><text x="118" y="205">7</text><text x="170" y="185">8</text><text x="222" y="165">9</text><text x="274" y="145">10</text><text x="326" y="125">11</text><text x="378" y="105">12</text>
+  </g>
+
+  <!-- Flag at the top -->
+  <path d="M396 80V22" stroke="#F2F5F7" stroke-width="3" stroke-linecap="round"/>
+  <path d="M396 24h40l-10 12 10 12h-40z" fill="#7CC6EE"/>
+
+  <!-- Graduation cap -->
+  <g fill="none" stroke="#F2F5F7" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M70 70l50-22 50 22-50 22z"/>
+    <path d="M90 79v22c0 9 60 9 60 0V79M170 70v28"/>
+  </g>
+
+  <!-- Path dots -->
+  <path d="M66 190Q160 150 230 128T380 70" fill="none" stroke="#F2F5F7" stroke-opacity=".5" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round"/>
+</svg>

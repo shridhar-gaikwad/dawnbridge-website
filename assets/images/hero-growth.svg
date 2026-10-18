@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" preserveAspectRatio="xMidYMid slice">
+  <!-- DawnBridge hero background: business growth line-art in blue and white (original artwork) -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B2A3B"/>
+      <stop offset=".55" stop-color="#134B69"/>
+      <stop offset="1" stop-color="#1F6E98"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="1220" cy="360" r="620" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4FB3E8" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#4FB3E8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7CC6EE" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#7CC6EE" stop-opacity=".02"/>
+    </linearGradient>
+    <linearGradient id="arrow" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#4FB3E8"/>
+      <stop offset="1" stop-color="#F2F5F7"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#F2F5F7" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <!-- Globe wireframe (international reach) -->
+  <g fill="none" stroke="#DCEAF2" stroke-opacity=".22" stroke-width="1.5">
+    <circle cx="1300" cy="250" r="170"/>
+    <ellipse cx="1300" cy="250" rx="170" ry="58"/>
+    <ellipse cx="1300" cy="250" rx="170" ry="118"/>
+    <ellipse cx="1300" cy="250" rx="58" ry="170"/>
+    <ellipse cx="1300" cy="250" rx="118" ry="170"/>
+    <path d="M1130 250h340M1300 80v340"/>
+  </g>
+  <!-- Flight paths between pins -->
+  <g fill="none" stroke="#7CC6EE" stroke-opacity=".7" stroke-width="2" stroke-dasharray="3 8" stroke-linecap="round">
+    <path d="M1225 300Q1290 160 1395 190"/>
+    <path d="M1225 300Q1180 200 1245 140"/>
+    <path d="M1225 300Q1330 330 1420 285"/>
+  </g>
+  <g fill="#F2F5F7">
+    <circle cx="1225" cy="300" r="7"/>
+    <circle cx="1395" cy="190" r="5"/>
+    <circle cx="1245" cy="140" r="5"/>
+    <circle cx="1420" cy="285" r="5"/>
+  </g>
+  <circle cx="1225" cy="300" r="16" fill="none" stroke="#F2F5F7" stroke-opacity=".5" stroke-width="1.5"/>
+
+  <!-- Rising bar chart -->
+  <g fill="url(#bar)" stroke="#DCEAF2" stroke-opacity=".35" stroke-width="1.5">
+    <rect x="880"  y="720" width="54" height="120" rx="6"/>
+    <rect x="970"  y="680" width="54" height="160" rx="6"/>
+    <rect x="1060" y="700" width="54" height="140" rx="6"/>
+    <rect x="1150" y="610" width="54" height="230" rx="6"/>
+    <rect x="1240" y="550" width="54" height="290" rx="6"/>
+    <rect x="1330" y="470" width="54" height="370" rx="6"/>
+    <rect x="1420" y="380" width="54" height="460" rx="6"/>
+  </g>
+  <path d="M840 840H1540" stroke="#DCEAF2" stroke-opacity=".35" stroke-width="2"/>
+
+  <!-- Growth arrow with glow -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M860 690L960 630 1050 655 1140 560 1230 505 1320 420 1430 330" stroke="#4FB3E8" stroke-width="16" stroke-opacity=".35" filter="url(#soft)"/>
+    <path d="M860 690L960 630 1050 655 1140 560 1230 505 1320 420 1430 330" stroke="url(#arrow)" stroke-width="6"/>
+  </g>
+  <path d="M1458 300L1408 316 1442 350z" fill="#F2F5F7"/>
+  <g fill="#0B2A3B" stroke="#F2F5F7" stroke-width="3">
+    <circle cx="960" cy="630" r="7"/>
+    <circle cx="1140" cy="560" r="7"/>
+    <circle cx="1320" cy="420" r="7"/>
+  </g>
+
+  <!-- Line-art doodles (plan, idea, target, education) -->
+  <g fill="none" stroke="#F2F5F7" stroke-opacity=".28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Lightbulb -->
+    <path d="M905 175a38 38 0 1 1 52 35v18h-40v-18a38 38 0 0 1-12-35z"/>
+    <path d="M920 240h34M924 252h26M937 130v-16M890 150l-12-10M984 150l12-10"/>
+    <!-- Target -->
+    <circle cx="1070" cy="250" r="34"/>
+    <circle cx="1070" cy="250" r="20"/>
+    <circle cx="1070" cy="250" r="6"/>
+    <path d="M1070 250l38-38M1098 212h10v-10"/>
+    <!-- Paper plane + trail -->
+    <path d="M1060 80l60-22-22 60-10-28z"/>
+    <path d="M1056 92q-40 18-80 6" stroke-dasharray="4 8"/>
+    <!-- Graduation cap -->
+    <path d="M1450 520l60-26 60 26-60 26z"/>
+    <path d="M1475 531v24c0 10 70 10 70 0v-24M1570 520v34"/>
+    <!-- Gear -->
+    <circle cx="1550" cy="760" r="18"/>
+    <path d="M1550 728v10M1550 782v10M1518 760h10M1572 760h10M1527 737l7 7M1566 776l7 7M1573 737l-7 7M1534 776l-7 7"/>
+    <!-- Connector arrows from bulb -->
+    <path d="M960 175q60-10 80 30" stroke-dasharray="5 7"/>
+  </g>
+
+  <!-- Keyword boxes (inspired by hand-drawn strategy boards) -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="3" fill="#F2F5F7" fill-opacity=".55" text-anchor="middle">
+    <g fill="none" stroke="#F2F5F7" stroke-opacity=".3" stroke-width="1.5">
+      <rect x="985" y="390" width="104" height="34" rx="6"/>
+      <rect x="1100" y="455" width="100" height="34" rx="6"/>
+      <rect x="1470" y="200" width="96" height="34" rx="6"/>
+      <rect x="1210" y="30" width="128" height="34" rx="6"/>
+      <rect x="1460" y="600" width="122" height="34" rx="6"/>
+    </g>
+    <text x="1037" y="413">BUILD</text>
+    <text x="1150" y="478">STAFF</text>
+    <text x="1518" y="223">GROW</text>
+    <text x="1274" y="53">INSIGHT</text>
+    <text x="1521" y="623">IMPACT</text>
+  </g>
+
+</svg>

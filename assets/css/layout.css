@@ -1,0 +1,113 @@
+/* ==========================================================================
+   layout.css — Containers, sections, grids (mobile-first)
+   Breakpoints: base 360px · 480px (30em) · 768px (48em) · 1024px (64em) · 1440px+ (90em)
+   ========================================================================== */
+
+/* ---------- Container ---------- */
+.container {
+  width: 100%;
+  max-width: calc(var(--container-max) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@media (min-width: 90em) {
+  .container {
+    max-width: calc(var(--container-wide) + var(--gutter) * 2);
+  }
+}
+
+/* ---------- Section ---------- */
+.section {
+  padding-block: var(--space-section);
+}
+
+.section--alt {
+  background-color: var(--color-surface-alt);
+}
+
+.section--dark {
+  background: var(--gradient-brand);
+  color: var(--color-text-on-dark);
+}
+
+.section--flush-top {
+  padding-top: 0;
+}
+
+/* ---------- Grid: 1 col mobile · 2 tablet · 3/4 desktop ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+}
+
+@media (min-width: 48em) {
+  .grid--2,
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64em) {
+  .grid {
+    gap: var(--space-4);
+  }
+
+  .grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .grid--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* List items that wrap a card stretch the card to the row height */
+.grid > li {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid > li > * {
+  flex: 1;
+}
+
+/* ---------- Split: two columns from 1024px ---------- */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: center;
+}
+
+@media (min-width: 64em) {
+  .split {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-10);
+  }
+
+  .split--wide-left {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
+
+  .split--wide-right {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  }
+
+  .split--top {
+    align-items: start;
+  }
+}
+
+/* ---------- Vertical rhythm after a section head ---------- */
+.stack-top {
+  margin-top: var(--space-6);
+}
+
+@media (min-width: 64em) {
+  .stack-top {
+    margin-top: var(--space-8);
+  }
+}

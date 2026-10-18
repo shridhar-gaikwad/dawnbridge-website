@@ -1,0 +1,416 @@
+/* ==========================================================================
+   pages.css — Page-specific sections
+   Home: Hero, How we work, Why band, Founder
+   (Service pages and Contact are added in phase C.)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   SECTION: Hero  →  <Hero image eyebrow title lead actions highlights />
+   Full-bleed business-growth artwork behind the headline. The page header
+   floats over it (negative margin pulls the hero under the header).
+   ========================================================================== */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: calc(var(--header-offset) * -1);
+  padding-top: calc(var(--header-offset) + var(--space-8));
+  padding-bottom: calc(var(--space-8) + var(--space-10)); /* room for overlapping stat cards */
+  color: var(--color-text-on-dark);
+  background-color: var(--blue-950);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+@media (min-width: 64em) {
+  .hero {
+    min-height: min(100svh, 56rem);
+    padding-top: calc(var(--header-offset) + var(--space-10));
+    padding-bottom: calc(var(--space-10) + var(--space-12));
+  }
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% center;
+}
+
+/* Readability overlay: vertical on mobile, left-to-right on desktop */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--gradient-hero-overlay-mobile);
+}
+
+@media (min-width: 64em) {
+  .hero::before {
+    background: var(--gradient-hero-overlay);
+  }
+}
+
+/* Curved bottom edge into the page background */
+.hero__curve {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 0;
+  width: 100%;
+  height: clamp(2.5rem, 6vw, 5.5rem);
+  color: var(--color-bg);
+}
+
+.hero__content {
+  position: relative;
+  max-width: 40rem;
+}
+
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: var(--space-3);
+  padding: 0.4375rem 1rem 0.4375rem 0.4375rem;
+  border: 1px solid rgba(242, 245, 247, 0.2);
+  border-radius: var(--radius-pill);
+  background-color: rgba(242, 245, 247, 0.08);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: var(--color-text-on-dark);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  line-height: 1.3;
+}
+
+.hero__eyebrow-tag {
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-text-on-dark);
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-extrabold);
+  letter-spacing: 0.04em;
+}
+
+.hero__title {
+  max-width: 16ch;
+  color: var(--color-text-on-dark);
+  font-size: clamp(2.375rem, 1.6rem + 3.4vw, 4.25rem);
+}
+
+.hero__title-highlight {
+  color: var(--color-accent-light);
+}
+
+.hero__lead {
+  max-width: 54ch;
+  margin-top: var(--space-3);
+  color: var(--color-text-on-dark-muted);
+  font-size: var(--fs-md);
+}
+
+.hero__actions {
+  margin-top: var(--space-5);
+}
+
+.hero__highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  margin-top: var(--space-5);
+  padding: 0;
+  list-style: none;
+}
+
+.hero__highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-text-on-dark);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+}
+
+.hero__highlight svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: none;
+  padding: 0.1875rem;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: var(--blue-950);
+}
+
+
+/* ==========================================================================
+   SECTION: How we work  →  <HowWeWork head accordion image />
+   ========================================================================== */
+.how__media {
+  position: relative;
+  width: 100%;
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
+.how__image {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Mobile: tucks under the image edge so it never hides the artwork.
+   Desktop: floats over the bottom-left corner. */
+.how__note {
+  position: relative;
+  margin: calc(var(--space-5) * -1) var(--space-2) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background-color: rgba(251, 252, 253, 0.96);
+  box-shadow: var(--shadow-md);
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+}
+
+@media (min-width: 64em) {
+  .how__note {
+    position: absolute;
+    left: calc(var(--space-5) * -1);
+    bottom: var(--space-5);
+    max-width: 19rem;
+    margin: 0;
+  }
+}
+
+.how__accordion {
+  margin-top: var(--space-5);
+}
+
+
+/* ==========================================================================
+   SECTION: Why band (full-bleed split)  →  <WhyBand quote features actions />
+   ========================================================================== */
+.why-band {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  background-color: var(--color-surface-alt);
+}
+
+@media (min-width: 64em) {
+  .why-band {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  }
+}
+
+.why-band__panel {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 22rem;
+  padding: var(--space-8) var(--gutter);
+  background-color: var(--blue-950);
+  color: var(--color-text-on-dark);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+@media (min-width: 64em) {
+  .why-band__panel {
+    padding: var(--space-10) var(--space-8);
+  }
+}
+
+.why-band__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 75% 80%;
+}
+
+.why-band__panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(0deg, rgba(11, 42, 59, 0.95) 0%, rgba(11, 42, 59, 0.6) 55%, rgba(11, 42, 59, 0.35) 100%);
+}
+
+.why-band__quote-mark {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: var(--space-2);
+  color: var(--color-accent);
+}
+
+.why-band__quote {
+  max-width: 24ch;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 1.2rem + 1.3vw, 2.25rem);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.why-band__cite {
+  display: block;
+  margin-top: var(--space-3);
+  color: var(--color-text-on-dark-muted);
+  font-size: var(--fs-sm);
+  font-style: normal;
+}
+
+.why-band__content {
+  padding: var(--space-8) var(--gutter);
+}
+
+@media (min-width: 64em) {
+  .why-band__content {
+    max-width: 44rem;
+    padding: var(--space-12) var(--space-8);
+  }
+}
+
+.why-band__list {
+  margin-top: var(--space-5);
+}
+
+.why-band__actions {
+  margin-top: var(--space-5);
+}
+
+
+/* ==========================================================================
+   SECTION: Founder  →  <Founder name role bio quote stats previousTeams />
+   ========================================================================== */
+.founder__media {
+  position: relative;
+  isolation: isolate; /* keeps the offset frame behind the photo */
+  width: 100%;
+  max-width: 26rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 64em) {
+  .founder__media {
+    max-width: 28rem;
+  }
+}
+
+/* Offset frame behind the photo */
+.founder__media::before {
+  content: "";
+  position: absolute;
+  inset: var(--space-3) calc(var(--space-3) * -1) calc(var(--space-3) * -1) var(--space-3);
+  z-index: -1;
+  border: 2px solid var(--blue-200);
+  border-radius: var(--radius-xl);
+}
+
+/* [PLACEHOLDER] frame for the founder portrait */
+.founder__photo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at 70% 20%, rgba(79, 179, 232, 0.35), transparent 55%),
+    var(--gradient-brand);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.founder__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.founder__initials {
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 3rem + 5vw, 7rem);
+  font-weight: var(--fw-extrabold);
+  letter-spacing: -0.04em;
+  color: rgba(242, 245, 247, 0.92);
+}
+
+.founder__caption {
+  position: absolute;
+  left: var(--space-2);
+  right: var(--space-2);
+  bottom: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background-color: rgba(251, 252, 253, 0.96);
+  box-shadow: var(--shadow-md);
+}
+
+.founder__caption-name {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  color: var(--color-heading);
+}
+
+.founder__caption-role {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+}
+
+.founder__bio {
+  max-width: var(--measure);
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.founder__stats {
+  margin-top: var(--space-5);
+}
+
+.founder__teams {
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.founder__teams-label {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+}
+
+.founder__team-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+  padding: 0;
+  list-style: none;
+}
+
+.founder__team {
+  padding: 0.375rem 0.875rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
