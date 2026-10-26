@@ -11,7 +11,7 @@ function initNav() {
   if (!toggle || !nav) return;
 
   var OPEN_CLASS = 'primary-nav--open';
-  var desktopQuery = window.matchMedia('(min-width: 75em)');
+  var desktopQuery = window.matchMedia('(min-width: 64em)');
 
   function isOpen() {
     return toggle.getAttribute('aria-expanded') === 'true';

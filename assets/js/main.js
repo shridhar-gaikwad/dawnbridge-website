@@ -1,5 +1,5 @@
 /* ==========================================================================
-   main.js — Entry point. Loaded last (defer), after nav.js and reveal.js.
+   main.js — Entry point. Loaded last (defer), after the feature files.
    Marks JS as available, then starts each self-contained feature.
    ========================================================================== */
 
@@ -7,5 +7,6 @@
   document.documentElement.classList.add('js');
 
   initNav();
+  initDropdown();
   initReveal();
 })();
