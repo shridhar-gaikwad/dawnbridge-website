@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   margin-top: calc(var(--header-offset) * -1);
-  padding-top: calc(var(--header-offset) + var(--space-8));
+  padding-top: calc(var(--header-offset) + var(--space-5));
   padding-bottom: calc(var(--space-8) + var(--space-10)); /* room for overlapping stat cards */
   color: var(--color-text-on-dark);
   background-color: var(--blue-950);
@@ -25,8 +25,8 @@
 
 @media (min-width: 64em) {
   .hero {
-    min-height: min(100svh, 56rem);
-    padding-top: calc(var(--header-offset) + var(--space-10));
+    min-height: min(92svh, 52rem);
+    padding-top: calc(var(--header-offset) + var(--space-6));
     padding-bottom: calc(var(--space-10) + var(--space-12));
   }
 }
@@ -148,6 +148,36 @@
   border-radius: 50%;
   background-color: var(--color-accent);
   color: var(--blue-950);
+}
+
+
+/* Inner-page variant: shorter, no room needed for overlapping stat cards */
+.hero--page {
+  min-height: 34rem;
+  padding-bottom: calc(var(--space-12) + var(--space-4));
+}
+
+/* Taller on desktop; content is vertically centred, so it sits a little lower */
+@media (min-width: 64em) {
+  .hero--page {
+    min-height: 42rem;
+    padding-top: calc(var(--header-offset) + var(--space-5));
+    padding-bottom: calc(var(--space-12) + var(--space-8));
+  }
+}
+
+.hero--page .hero__title {
+  max-width: 20ch;
+  font-size: clamp(2.125rem, 1.5rem + 2.8vw, 3.5rem);
+}
+
+
+/* ==========================================================================
+   SECTION: Services list (services.html)  →  <ServicesList services />
+   ========================================================================== */
+.services-list {
+  max-width: 64rem;
+  margin-inline: auto;
 }
 
 
@@ -312,14 +342,22 @@
   }
 }
 
-/* Offset frame behind the photo */
+/* Offset frame behind the photo. Offset stays smaller than the 16px phone
+   gutter so it never causes horizontal scroll. */
 .founder__media::before {
+  --frame-offset: 0.75rem;
   content: "";
   position: absolute;
-  inset: var(--space-3) calc(var(--space-3) * -1) calc(var(--space-3) * -1) var(--space-3);
+  inset: var(--frame-offset) calc(var(--frame-offset) * -1) calc(var(--frame-offset) * -1) var(--frame-offset);
   z-index: -1;
   border: 2px solid var(--blue-200);
   border-radius: var(--radius-xl);
+}
+
+@media (min-width: 48em) {
+  .founder__media::before {
+    --frame-offset: var(--space-3);
+  }
 }
 
 /* [PLACEHOLDER] frame for the founder portrait */

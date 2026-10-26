@@ -27,23 +27,3 @@
   }
 }
 
-/* Services submenu: always listed on mobile, opens on hover/focus on desktop */
-@media (max-width: 63.99em) {
-  .primary-nav__submenu {
-    display: grid;
-  }
-
-  .primary-nav__chevron {
-    display: none;
-  }
-}
-
-@media (min-width: 64em) {
-  .primary-nav__item--has-menu:hover .primary-nav__submenu,
-  .primary-nav__item--has-menu:focus-within .primary-nav__submenu {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(-50%, 0);
-    transition: none;
-  }
-}

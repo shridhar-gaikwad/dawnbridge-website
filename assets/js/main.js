@@ -7,6 +7,5 @@
   document.documentElement.classList.add('js');
 
   initNav();
-  initDropdown();
   initReveal();
 })();
