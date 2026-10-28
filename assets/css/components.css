@@ -229,8 +229,7 @@
   pointer-events: auto;
 }
 
-/* Brand wordmark  →  <Brand tone="dark|light" />
-   [PLACEHOLDER] text wordmark until the final logo file is supplied */
+/* Brand: logo mark + wordmark  →  <Brand tone="dark|light" /> */
 .brand {
   display: inline-flex;
   align-items: center;
@@ -249,17 +248,16 @@
   color: var(--color-primary);
 }
 
+/* Logo mark (assets/images/logo-mark.png, resized from Logo.jpeg).
+   The source has a white background, so it sits on a white tile. */
 .brand__mark {
-  display: grid;
-  place-items: center;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
   flex: none;
+  padding: 0.125rem;
   border-radius: 0.625rem;
-  background: var(--gradient-brand);
-  color: var(--color-text-on-dark);
-  font-size: 1.0625rem;
-  font-weight: var(--fw-extrabold);
+  background-color: #FFFFFF;
+  object-fit: contain;
 }
 
 .brand__name {
@@ -277,8 +275,7 @@
 }
 
 .brand--light .brand__mark {
-  background: var(--color-text-on-dark);
-  color: var(--color-primary);
+  padding: 0.1875rem;
 }
 
 .brand--light .brand__suffix {
