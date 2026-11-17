@@ -1,4 +1,5 @@
 import { useReveal } from '../hooks/useReveal';
+import { asset } from '../lib/asset';
 
 const steps = [
   {
@@ -50,7 +51,7 @@ function HowWeWork() {
         <figure className="how__media reveal" ref={mediaRevealRef}>
           <img
             className="how__image"
-            src="/assets/images/growth-path.svg"
+            src={asset('assets/images/growth-path.svg')}
             width="640"
             height="560"
             loading="lazy"

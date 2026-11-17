@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { asset } from '../lib/asset';
 
 // Original nav.js did everything by directly touching the DOM:
 // toggle.setAttribute(...), nav.classList.toggle(...), etc.
@@ -65,8 +66,8 @@ function SiteHeader() {
     <header className="site-header" ref={headerRef}>
       <div className="container">
         <div className="site-header__inner">
-          <a className="brand" href="/" aria-label="DawnBridge Strategies, home">
-            <img className="brand__mark" src="/assets/images/logo-mark.png" width="40" height="38" alt="" />
+          <a className="brand" href={asset('')} aria-label="DawnBridge Strategies, home">
+            <img className="brand__mark" src={asset('assets/images/logo-mark.png')} width="40" height="38" alt="" />
             <span className="brand__name">DawnBridge</span>
             <span className="brand__suffix">Strategies</span>
           </a>
@@ -96,7 +97,7 @@ function SiteHeader() {
           >
             <ul className="primary-nav__list" role="list">
               <li>
-                <a ref={firstLinkRef} className="primary-nav__link" href="/" aria-current="page" onClick={() => closeMenu(false)}>
+                <a ref={firstLinkRef} className="primary-nav__link" href={asset('')} aria-current="page" onClick={() => closeMenu(false)}>
                   Home
                 </a>
               </li>

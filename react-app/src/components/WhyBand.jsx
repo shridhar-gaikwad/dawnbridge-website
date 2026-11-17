@@ -1,5 +1,6 @@
 import { ArrowIcon, QuoteMarkIcon } from './icons';
 import { useReveal } from '../hooks/useReveal';
+import { asset } from '../lib/asset';
 
 const reasons = [
   { title: 'An expert team from day one', text: 'No hiring gamble. No learning curve at your expense.' },
@@ -15,7 +16,7 @@ function WhyBand() {
   return (
     <section className="why-band" aria-labelledby="why-title">
       <div className="why-band__panel theme-dark reveal" ref={panelRevealRef}>
-        <img className="why-band__bg" src="/assets/images/hero-growth.svg" width="1600" height="900" alt="" loading="lazy" decoding="async" />
+        <img className="why-band__bg" src={asset('assets/images/hero-growth.svg')} width="1600" height="900" alt="" loading="lazy" decoding="async" />
         <figure>
           <QuoteMarkIcon className="why-band__quote-mark" />
           <blockquote className="why-band__quote">

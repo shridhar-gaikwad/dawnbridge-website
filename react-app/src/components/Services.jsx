@@ -1,5 +1,6 @@
 import { ArrowIcon, CheckIcon } from './icons';
 import { useReveal } from '../hooks/useReveal';
+import { asset } from '../lib/asset';
 
 const services = [
   {
@@ -43,7 +44,7 @@ function ServiceCard({ service }) {
         <div className="service-card__media">
           <img
             className="service-card__image"
-            src={service.image}
+            src={asset(service.image)}
             width="480"
             height="260"
             loading="lazy"

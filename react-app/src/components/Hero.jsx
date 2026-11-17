@@ -1,4 +1,5 @@
 import { ArrowIcon, CheckIcon } from './icons';
+import { asset } from '../lib/asset';
 
 const highlights = ['India-focused', 'End-to-end partner', 'Three service models'];
 
@@ -7,7 +8,7 @@ function Hero() {
     <section className="hero theme-dark" aria-labelledby="hero-title">
       <img
         className="hero__bg"
-        src="/assets/images/hero-growth.svg"
+        src={asset('assets/images/hero-growth.svg')}
         width="1600"
         height="900"
         alt=""

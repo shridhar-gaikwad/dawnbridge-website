@@ -1,5 +1,6 @@
 import { ArrowIcon } from './icons';
 import { useReveal } from '../hooks/useReveal';
+import { asset } from '../lib/asset';
 
 function CtaBand() {
   const revealRef = useReveal();
@@ -8,7 +9,7 @@ function CtaBand() {
     <section className="section" aria-labelledby="cta-title">
       <div className="container">
         <div className="cta-band theme-dark reveal" ref={revealRef}>
-          <img className="cta-band__bg" src="/assets/images/hero-growth.svg" width="1600" height="900" alt="" loading="lazy" decoding="async" />
+          <img className="cta-band__bg" src={asset('assets/images/hero-growth.svg')} width="1600" height="900" alt="" loading="lazy" decoding="async" />
           <div>
             <h2 className="cta-band__title" id="cta-title">
               Let&apos;s build your education business in India.

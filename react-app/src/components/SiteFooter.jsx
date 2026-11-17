@@ -1,11 +1,13 @@
+import { asset } from '../lib/asset';
+
 function SiteFooter() {
   return (
     <footer className="site-footer theme-dark">
       <div className="container">
         <div className="site-footer__grid">
           <div className="site-footer__about">
-            <a className="brand brand--light" href="/" aria-label="DawnBridge Strategies, home">
-              <img className="brand__mark" src="/assets/images/logo-mark.png" width="40" height="38" alt="" loading="lazy" decoding="async" />
+            <a className="brand brand--light" href={asset('')} aria-label="DawnBridge Strategies, home">
+              <img className="brand__mark" src={asset('assets/images/logo-mark.png')} width="40" height="38" alt="" loading="lazy" decoding="async" />
               <span className="brand__name">DawnBridge</span>
               <span className="brand__suffix">Strategies</span>
             </a>
@@ -43,12 +45,12 @@ function SiteFooter() {
             </h2>
             <ul className="site-footer__list" role="list">
               <li>
-                <a className="site-footer__link" href="/">
+                <a className="site-footer__link" href={asset('')}>
                   Home
                 </a>
               </li>
               <li>
-                <a className="site-footer__link" href="/#founder">
+                <a className="site-footer__link" href={`${asset('')}#founder`}>
                   Meet the founder
                 </a>
               </li>
