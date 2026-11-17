@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" width="480" height="260">
+  <!-- Study Abroad Business Accelerator: office + rising chart (original artwork) -->
+  <defs>
+    <linearGradient id="a-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16587B"/>
+      <stop offset="1" stop-color="#0F3D56"/>
+    </linearGradient>
+    <linearGradient id="a-bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7CC6EE" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#7CC6EE" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="260" fill="url(#a-bg)"/>
+  <g fill="none" stroke="#F2F5F7" stroke-opacity=".06"><path d="M0 52h480M0 104h480M0 156h480M0 208h480M96 0v260M192 0v260M288 0v260M384 0v260"/></g>
+
+  <!-- Office building -->
+  <g fill="none" stroke="#F2F5F7" stroke-opacity=".85" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M60 220V92l70-32v160"/>
+    <path d="M130 220V110h60v110"/>
+    <path d="M40 220h170"/>
+    <path d="M78 104h14M100 96h14M78 128h14M100 120h14M78 152h14M100 144h14M78 176h14M100 168h14M146 130h28M146 152h28M146 174h28"/>
+    <path d="M88 220v-24h20v24"/>
+  </g>
+
+  <!-- Bars -->
+  <g fill="url(#a-bar)" stroke="#DCEAF2" stroke-opacity=".6" stroke-width="1.5">
+    <rect x="250" y="170" width="30" height="50" rx="4"/>
+    <rect x="296" y="146" width="30" height="74" rx="4"/>
+    <rect x="342" y="118" width="30" height="102" rx="4"/>
+    <rect x="388" y="82" width="30" height="138" rx="4"/>
+  </g>
+  <path d="M236 220h204" stroke="#DCEAF2" stroke-opacity=".6" stroke-width="2"/>
+
+  <!-- Arrow -->
+  <path d="M244 150L300 118 334 128 404 60" fill="none" stroke="#F2F5F7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M420 44l-30 8 20 20z" fill="#F2F5F7"/>
+  <circle cx="300" cy="118" r="5" fill="#0F3D56" stroke="#F2F5F7" stroke-width="2.5"/>
+  <circle cx="334" cy="128" r="5" fill="#0F3D56" stroke="#F2F5F7" stroke-width="2.5"/>
+
+  <!-- Paper plane (study abroad) -->
+  <g fill="none" stroke="#7CC6EE" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M190 64l44-18-16 44-8-18z"/><path d="M210 72l24-26"/><path d="M186 70q-24 12-46 4" stroke-dasharray="3 7"/></g>
+</svg>

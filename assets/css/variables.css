@@ -1,0 +1,132 @@
+/* ==========================================================================
+   variables.css — Design tokens (single source of truth)
+   Brand: DawnBridge Strategies
+   Logo colours: Venice Blue #16587B · Cloud Pearl #F2F5F7
+   Theme: blue and white.
+   60-30-10: 60% Cloud Pearl / white-blue neutrals · 30% Venice Blue · 10% Sky Blue accent
+   React: import once at the app root, or map to a theme object.
+   ========================================================================== */
+
+:root {
+  /* ---------- Brand scale: Venice Blue ---------- */
+  --blue-950: #0B2A3B;  /* darkest sections, footer */
+  --blue-800: #0F3D56;
+  --blue-700: #134B69;
+  --blue-600: #16587B;  /* Venice Blue (logo) */
+  --blue-500: #1F6E98;
+  --blue-200: #B7CEDC;
+  --blue-100: #DCEAF2;
+  --blue-50:  #EEF4F8;
+
+  /* ---------- 60%: neutrals ---------- */
+  --color-bg:           #F2F5F7; /* Cloud Pearl (logo) */
+  --color-surface:      #FBFCFD; /* cards (never pure white) */
+  --color-surface-alt:  var(--blue-50);
+
+  /* ---------- 30%: primary ---------- */
+  --color-primary:       var(--blue-600);
+  --color-primary-hover: var(--blue-700);
+  --color-primary-soft:  var(--blue-100);
+  --color-dark:          var(--blue-950);
+
+  /* ---------- 10%: accent (highlights, icons, lines) ----------
+     Sky Blue is decorative. As text it is used only on blue-950/800
+     (6.4:1 / 4.9:1). CTAs use Venice Blue (light bg) or white (dark bg). */
+  --color-accent:       #4FB3E8;
+  --color-accent-light: #7CC6EE;
+  --color-accent-soft:  #E3F2FB;
+
+  /* ---------- Text ---------- */
+  --color-heading:            #0E2433; /* 14.5:1 on bg */
+  --color-text:               #0E2433;
+  --color-text-muted:         #4A5E6D; /* 6.2:1 on bg */
+  --color-text-on-dark:       #F2F5F7; /* 7.1:1 on Venice Blue, 13.6:1 on blue-950 */
+  --color-text-on-dark-muted: #B7CEDC; /* 4.7:1 on Venice Blue, 9.1:1 on blue-950 */
+
+  /* ---------- UI ---------- */
+  --color-border:         #DCE4EA;
+  --color-border-strong:  #B9C8D3;
+  --color-border-on-dark: rgba(242, 245, 247, 0.16);
+  --color-success:        #1E7A4C;
+  --color-error:          #B42318;
+  --color-focus:          var(--blue-500);
+  --color-focus-on-dark:  var(--color-accent);
+
+  /* ---------- Gradients ---------- */
+  --gradient-brand: linear-gradient(135deg, var(--blue-600) 0%, var(--blue-800) 60%, var(--blue-950) 100%);
+  /* Darkens the left of the hero image so white text stays readable */
+  --gradient-hero-overlay: linear-gradient(90deg, rgba(11, 42, 59, 0.96) 0%, rgba(11, 42, 59, 0.88) 42%, rgba(11, 42, 59, 0.4) 68%, rgba(11, 42, 59, 0.08) 100%);
+  --gradient-hero-overlay-mobile: linear-gradient(180deg, rgba(11, 42, 59, 0.92) 0%, rgba(11, 42, 59, 0.85) 60%, rgba(11, 42, 59, 0.7) 100%);
+
+  /* ---------- Typography ---------- */
+  --font-heading: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --fs-xs:   0.8125rem;                                 /* 13px */
+  --fs-sm:   0.9375rem;                                 /* 15px */
+  --fs-base: 1rem;                                      /* 16px */
+  --fs-md:   clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem); /* lead */
+  --fs-lg:   clamp(1.1875rem, 1.1rem + 0.4vw, 1.375rem);/* h3 */
+  --fs-xl:   clamp(1.875rem, 1.45rem + 1.8vw, 2.875rem);/* h2 */
+  --fs-2xl:  clamp(2.25rem, 1.6rem + 3vw, 4rem);        /* h1 */
+  --fs-stat: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem);
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  --lh-tight: 1.12;
+  --lh-snug: 1.35;
+  --lh-base: 1.6;
+
+  --measure: 68ch;
+  --measure-narrow: 54ch;
+
+  /* ---------- Spacing (8px scale) ---------- */
+  --space-0-5: 0.25rem; /*  4 */
+  --space-1:   0.5rem;  /*  8 */
+  --space-2:   1rem;    /* 16 */
+  --space-3:   1.5rem;  /* 24 */
+  --space-4:   2rem;    /* 32 */
+  --space-5:   2.5rem;  /* 40 */
+  --space-6:   3rem;    /* 48 */
+  --space-8:   4rem;    /* 64 */
+  --space-10:  5rem;    /* 80 */
+  --space-12:  6rem;    /* 96 */
+  --space-section: clamp(var(--space-8), 9vw, 7.5rem);
+
+  /* ---------- Layout ---------- */
+  --container-max: 75rem;   /* 1200px */
+  --container-wide: 82.5rem;/* 1320px at 1440px+ */
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --header-height: 4.25rem;  /* the floating pill */
+  --header-gap: 0.75rem;     /* space around the pill */
+  --header-offset: calc(var(--header-height) + var(--header-gap) * 2);
+
+  /* ---------- Radius ---------- */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --radius-pill: 999px;
+
+  /* ---------- Shadows (soft, blue-tinted) ---------- */
+  --shadow-xs: 0 1px 2px rgba(14, 36, 51, 0.05);
+  --shadow-sm: 0 2px 6px rgba(14, 36, 51, 0.06), 0 1px 2px rgba(14, 36, 51, 0.04);
+  --shadow-md: 0 10px 24px rgba(14, 36, 51, 0.08), 0 2px 6px rgba(14, 36, 51, 0.04);
+  --shadow-lg: 0 24px 48px rgba(14, 36, 51, 0.12), 0 6px 12px rgba(14, 36, 51, 0.05);
+  --shadow-primary: 0 12px 28px rgba(22, 88, 123, 0.32);
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 160ms;
+  --duration-base: 280ms;
+  --duration-slow: 650ms;
+
+  /* ---------- Layers ---------- */
+  --z-raised: 2;
+  --z-header: 100;
+  --z-skip: 200;
+}
