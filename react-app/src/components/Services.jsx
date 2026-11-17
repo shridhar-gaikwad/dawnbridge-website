@@ -1,11 +1,10 @@
-import { ArrowIcon, CheckIcon } from './icons';
+import ServiceCard from './ServiceCard';
 import { useReveal } from '../hooks/useReveal';
-import { asset } from '../lib/asset';
 
 const services = [
   {
     number: '01',
-    image: '/assets/images/svc-accelerator.svg',
+    image: 'assets/images/svc-accelerator.svg',
     alt: 'Illustration of an office building beside a rising bar chart.',
     title: 'Study Abroad Business Accelerator',
     text: 'You fund it, we run it. We build, market and grow your study abroad consultancy from the ground up.',
@@ -15,7 +14,7 @@ const services = [
   },
   {
     number: '02',
-    image: '/assets/images/svc-representation.svg',
+    image: 'assets/images/svc-representation.svg',
     alt: 'Illustration of a globe with a location pin, two representatives and a university building.',
     title: 'In-Country Representation',
     text: 'Dedicated representatives on the ground in India, from a single professional to a fully managed team.',
@@ -25,7 +24,7 @@ const services = [
   },
   {
     number: '03',
-    image: '/assets/images/svc-career.svg',
+    image: 'assets/images/svc-career.svg',
     alt: 'Illustration of seven rising steps from Grade 6 to Grade 12, a flag at the top and a graduation cap.',
     title: 'Career Guidance Department',
     text: 'A complete career guidance department for Grades 6 to 12, built by us and run with your school every year.',
@@ -34,50 +33,6 @@ const services = [
     link: { href: 'career-guidance-department.html', label: 'Explore Career Guidance' },
   },
 ];
-
-function ServiceCard({ service }) {
-  const revealRef = useReveal();
-
-  return (
-    <li className="reveal" ref={revealRef}>
-      <article className="service-card">
-        <div className="service-card__media">
-          <img
-            className="service-card__image"
-            src={asset(service.image)}
-            width="480"
-            height="260"
-            loading="lazy"
-            decoding="async"
-            alt={service.alt}
-          />
-          <span className="service-card__number" aria-hidden="true">
-            {service.number}
-          </span>
-        </div>
-        <div className="service-card__body">
-          <h3 className="service-card__title">{service.title}</h3>
-          <p className="service-card__text">{service.text}</p>
-          <ul className="service-card__list" role="list">
-            {service.items.map((item) => (
-              <li className="service-card__item" key={item}>
-                <CheckIcon />
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p className="service-card__best">
-            <strong>Best for:</strong> {service.best}
-          </p>
-          <a className="service-card__link" href={service.link.href}>
-            {service.link.label}
-            <ArrowIcon />
-          </a>
-        </div>
-      </article>
-    </li>
-  );
-}
 
 function Services() {
   const headRevealRef = useReveal();

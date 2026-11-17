@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { asset } from '../lib/asset';
 
 function SiteFooter() {
@@ -6,11 +7,11 @@ function SiteFooter() {
       <div className="container">
         <div className="site-footer__grid">
           <div className="site-footer__about">
-            <a className="brand brand--light" href={asset('')} aria-label="DawnBridge Strategies, home">
+            <Link className="brand brand--light" to="/" aria-label="DawnBridge Strategies, home">
               <img className="brand__mark" src={asset('assets/images/logo-mark.png')} width="40" height="38" alt="" loading="lazy" decoding="async" />
               <span className="brand__name">DawnBridge</span>
               <span className="brand__suffix">Strategies</span>
-            </a>
+            </Link>
             <p className="site-footer__tagline">
               Insight | Strategy | Impact. We build, staff and grow international education businesses in India.
             </p>
@@ -45,14 +46,14 @@ function SiteFooter() {
             </h2>
             <ul className="site-footer__list" role="list">
               <li>
-                <a className="site-footer__link" href={asset('')}>
+                <Link className="site-footer__link" to="/">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="site-footer__link" href={`${asset('')}#founder`}>
+                <Link className="site-footer__link" to="/#founder">
                   Meet the founder
-                </a>
+                </Link>
               </li>
               <li>
                 <a className="site-footer__link" href="contact.html">
