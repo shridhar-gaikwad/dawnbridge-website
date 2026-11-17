@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { asset } from '../lib/asset';
 
 // Original nav.js did everything by directly touching the DOM:
@@ -66,11 +67,11 @@ function SiteHeader() {
     <header className="site-header" ref={headerRef}>
       <div className="container">
         <div className="site-header__inner">
-          <a className="brand" href={asset('')} aria-label="DawnBridge Strategies, home">
+          <Link className="brand" to="/" aria-label="DawnBridge Strategies, home">
             <img className="brand__mark" src={asset('assets/images/logo-mark.png')} width="40" height="38" alt="" />
             <span className="brand__name">DawnBridge</span>
             <span className="brand__suffix">Strategies</span>
-          </a>
+          </Link>
 
           <button
             ref={toggleRef}
@@ -97,9 +98,14 @@ function SiteHeader() {
           >
             <ul className="primary-nav__list" role="list">
               <li>
-                <a ref={firstLinkRef} className="primary-nav__link" href={asset('')} aria-current="page" onClick={() => closeMenu(false)}>
+                {/* NavLink knows the current route and automatically adds
+                    aria-current="page" when "to" matches it - that's what
+                    drives the active-link styling in components.css, with
+                    no manual bookkeeping per page. end stops it from also
+                    matching "/services" (every path starts with "/"). */}
+                <NavLink ref={firstLinkRef} className="primary-nav__link" to="/" end onClick={() => closeMenu(false)}>
                   Home
-                </a>
+                </NavLink>
               </li>
               <li>
                 <a className="primary-nav__link" href="study-abroad-business-accelerator.html" onClick={() => closeMenu(false)}>
@@ -107,9 +113,9 @@ function SiteHeader() {
                 </a>
               </li>
               <li>
-                <a className="primary-nav__link" href="services.html" onClick={() => closeMenu(false)}>
+                <NavLink className="primary-nav__link" to="/services" onClick={() => closeMenu(false)}>
                   Services
-                </a>
+                </NavLink>
               </li>
             </ul>
             <a className="btn btn--primary btn--sm primary-nav__cta" href="contact.html" onClick={() => closeMenu(false)}>
